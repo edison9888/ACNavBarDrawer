@@ -12,7 +12,13 @@
 
 @end
 
+
 @implementation TestNextViewController
+
+- (void)dismissButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +35,18 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"EmptyView";
+    
+    self.view.backgroundColor = RGBCOLOR(232, 242, 250);
+    
+    if (self.needDismissButton) {
+        //** 左关闭按钮 **********************************************************************
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithTitle:@"关闭"
+                                                                    style:UIBarButtonItemStyleDone
+                                                                   target:self
+                                                                   action:@selector(dismissButtonPressed:)];
+        self.navigationItem.leftBarButtonItem = leftItem;
+        //*************************************************************************************
+    }
     
 }
 

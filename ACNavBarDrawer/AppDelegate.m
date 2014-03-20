@@ -17,10 +17,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    SampleViewController *sampleVC =
-    [[SampleViewController alloc] initWithNibName:@"SampleViewController" bundle:nil];
-    
-    sampleVC.doNotNeedBackButton = YES;
+    SampleViewController *sampleVC = [[SampleViewController alloc] init];
     
     self.navVC = [[UINavigationController alloc] initWithRootViewController:sampleVC];
     

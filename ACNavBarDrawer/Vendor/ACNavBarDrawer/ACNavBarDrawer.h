@@ -8,25 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-/** 抽屉视图 委托协议 */
+/** 抽屉视图 代理协议 */
 @protocol ACNavBarDrawerDelegate <NSObject>
 
 @required
-/** 关闭按钮 代理回调方法 */
--(void)theBtnPressed:(UIButton *)theBtn;
+/** 点击按钮动作 回调 */
+- (void)didTapButtonAtIndex:(NSInteger)itemIndex;
 
 @optional
-/** 触摸背景 遮罩 代理回调方法 */
--(void)theBGMaskTapped;
+/** 抽屉将要开始关闭 回调 */
+- (void)drawerWillClose;
+
+/** 抽屉完成关闭 回调 */
+- (void)drawerDidClose;
+
+/** 触摸背景遮罩动作 回调 */
+- (void)didTapOnMask;
 
 @end
 
 
 @interface ACNavBarDrawer : UIView
 
-/** 抽屉视图 代理 */
+/** 代理对象 */
 @property (nonatomic, assign) id <ACNavBarDrawerDelegate> delegate;
-
 
 /** 抽屉视图是否已打开 */
 @property (nonatomic) BOOL isOpen;
@@ -34,9 +39,9 @@
 
 /**
  * 实例化抽屉视图
- * @param theView 指定的UIView
+ * @param view 需要把抽屉视图显示在哪个 UIView 上
  */
-- (id)initWithView:(UIView *)theView andItemInfoArray:(NSArray *)theArray;
+- (id)initWithView:(UIView *)view andItemInfoArray:(NSArray *)array;
 
 /**
  * 打开抽屉
@@ -44,7 +49,7 @@
 - (void)openNavBarDrawer;
 
 /**
- * 关起抽屉
+ * 关闭抽屉
  */
 - (void)closeNavBarDrawer;
 

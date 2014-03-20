@@ -6,8 +6,10 @@
 //  Copyright (c) 2013年 albert. All rights reserved.
 //
 
-#import "ACBaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface TestNextViewController : ACBaseViewController
+@interface TestNextViewController : UIViewController
+
+@property (nonatomic) BOOL needDismissButton;
 
 @end

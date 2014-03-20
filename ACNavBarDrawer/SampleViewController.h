@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SampleViewController : ACBaseViewController
-
-- (IBAction)testNextVC:(id)sender;
+@interface SampleViewController : UIViewController
 
 @end

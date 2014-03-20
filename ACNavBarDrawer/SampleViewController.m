@@ -6,11 +6,13 @@
 //  Copyright (c) 2013年 albert. All rights reserved.
 //
 
+
 #import "SampleViewController.h"
 
 #import "ACNavBarDrawer.h"
 
 #import "TestNextViewController.h"
+
 
 @interface SampleViewController () <ACNavBarDrawerDelegate>
 {
@@ -29,21 +31,14 @@
 
 #pragma mark - Action Methods
 
-- (IBAction)testNextVC:(id)sender
+- (void)testNextVC:(UIButton *)button
 {
     // Creat VC
     TestNextViewController *nextVC = [[TestNextViewController alloc] init];
     
     // Push
-    nextVC.loadType = BVLT_PushType;
     [self.navigationController pushViewController:nextVC animated:YES];
     
-    // Modal
-//    nextVC.loadType = BVLT_PresentType;
-//    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:nextVC];
-//    nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    
-//    [self presentViewController:nc animated:YES completion:nil];
 }
 
 - (void)navPlusBtnPressed:(UIButton *)sender
@@ -74,15 +69,11 @@
 
 #pragma mark - ACNavBarDrawerDelegate
 
--(void)theBtnPressed:(UIButton *)theBtn
-{    
-    NSInteger btnTag = theBtn.tag;
+-(void)didTapButtonAtIndex:(NSInteger)itemIndex
+{
+    DLog(@"按钮%d被点击", (itemIndex + 1));
     
-    NSInteger btnNumber = btnTag + 1;
-    
-    DLog(@"按钮%d被点击", btnNumber);
-    
-    switch (theBtn.tag)
+    switch (itemIndex)
     {
         case 0:
         {
@@ -102,7 +93,7 @@
             TestNextViewController *nextVC = [[TestNextViewController alloc] init];
             
             // Modal
-            nextVC.loadType = BVLT_PresentType;
+            nextVC.needDismissButton = YES;
             UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:nextVC];
             nc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
             
@@ -124,9 +115,9 @@
     [self rotatePlusIV];
 }
 
--(void)theBGMaskTapped
+-(void)drawerWillClose
 {
-    // 触摸背景遮罩时，需要通过回调，旋回加号图片
+    // 抽屉视图将要关闭时，需要通过回调，旋回加号图片
     [self rotatePlusIV];
 }
 
@@ -174,7 +165,7 @@
     CGFloat plusIV_x = (navRightBtn.bounds.size.width - plusIV_w) / 2.f;
     CGFloat plusIV_y = (navRightBtn.bounds.size.height - plusIV_h) / 2.f;
     
-    _plusIV = [[UIImageView alloc] initWithImage:PNGIMAGE(@"nav_plus")];
+    _plusIV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_plus"]];
     [_plusIV setFrame:CGRectMake(plusIV_x,
                                  plusIV_y,
                                  plusIV_w,
@@ -192,30 +183,50 @@
     //*********************************************************************************************;
     
     
-    //** 抽屉 *******************************************************************************
+    //** 抽屉对象 ***********************************************************************************
     
-    //-- 按钮信息 -------------------------------------------------------------------------------
-    // 就不建数据对象了，第一个为图片名、第二个为按钮名
-    NSArray *item_01 = [NSArray arrayWithObjects:@"drawer_msg", @"按钮1", nil];
-    NSArray *item_02 = [NSArray arrayWithObjects:@"drawer_msg", @"按钮2", nil];
-    NSArray *item_03 = [NSArray arrayWithObjects:@"drawer_msg", @"视图切换", nil];
-    NSArray *item_04 = [NSArray arrayWithObjects:@"drawer_msg", @"按钮4", nil];
-    
+    //-- 按钮图文数组 --------------------------------------------------------------------------------
+    // 东西不多就不建数据对象或者读取 plist 了，第一个为图片名、第二个为按钮名
     // 可根据数组大小自适应，最好是 2-5 个按钮，1个很2，5个以上很丑
-    NSArray *allItems = [NSArray arrayWithObjects:item_01,item_02,item_03, item_04, nil];
+    NSArray *allItems = @[@[@"drawer_msg", @"按钮1"],
+                          @[@"drawer_msg", @"按钮2"],
+                          @[@"drawer_msg", @"弹视图"],
+                          @[@"drawer_msg", @"按钮4"]];
+    //---------------------------------------------------------------------------------------------;
     
+    /** 初始化 */
     _drawerView = [[ACNavBarDrawer alloc] initWithView:self.view andItemInfoArray:allItems];
     _drawerView.delegate = self;
+    //*********************************************************************************************;
+    
+    
+    
+    
+    
+    //** 测试按钮  ***********************************************************************************
+    UIButton *tbtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 120, 30)];
+    
+    tbtn.backgroundColor = [UIColor orangeColor];
+    
+    [tbtn setTitle:@"testPushVC" forState:UIControlStateNormal];
+    [tbtn setTitleColor:[UIColor whiteColor]
+               forState:UIControlStateNormal];
+    
+    
+    [tbtn addTarget:self
+             action:@selector(testNextVC:)
+   forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.view addSubview:tbtn];
+    //*********************************************************************************************;
         
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    // 消失时 关闭抽屉
+    // 视图将要消失时 关闭抽屉
     [_drawerView closeNavBarDrawer];
-    
-    // 旋回加号图片
-    [self rotatePlusIV];
 }
 
 - (void)didReceiveMemoryWarning
