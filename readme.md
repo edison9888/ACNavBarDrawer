@@ -3,33 +3,35 @@
 
 导航栏抽屉视图
 
-<img src="https://github.com/albertgh/ACNavBarDrawer/raw/master/screenshot.gif"/>
+<img src="https://github.com/albertgh/ACNavBarDrawer/raw/master/screenshot_0.9.gif"/>
 
+## Installation
 
-# 使用方式
+* Drag `ACNavBarDrawer.h` & `ACNavBarDrawer.m` into your project.
+* Add **QuartzCore** framework to your project.
 
-1) 把 ACNavBarDrawer.h 和 ACNavBarDrawer.m 拖到项目中.
+把 ACNavBarDrawer.h 和 ACNavBarDrawer.m 拖到项目中. 添加 **QuartzCore** 框架
 
-	```objective-c
+```objective-c
     #import "ACNavBarDrawer.h"
-  	```  
+```  
 
-2) 创建 ACNavBarDrawer
+## Usage
 	
-	```objective-c
+### Initialization
+```objective-c
     //-- 先创建按钮信息 ------------------------------------------------------------------
     // 小数组第一个为图片名、第二个为按钮名
     NSArray *allItems = @[@[@"drawer_msg", @"按钮1"],
                           @[@"drawer_msg", @"按钮2"],
                           @[@"drawer_msg", @"弹视图"],
                           @[@"drawer_msg", @"按钮4"]];
-    
                           
     /** 初始化 */
     _drawerView = [[ACNavBarDrawer alloc] initWithView:self.view andItemInfoArray:allItems];
-    ```  
+```  
 
-3) 调用方式
+### 调用方式
 	
 	```objective-c
 	// 打开抽屉
@@ -39,7 +41,7 @@
     [_drawerView closeNavBarDrawer];
     ```
 
-4) 代理回调
+### Delegate
 
 	```objective-c
  	// 实现 <ACNavBarDrawerDelegate> 协议
