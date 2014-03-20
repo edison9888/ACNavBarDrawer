@@ -22,10 +22,10 @@
 ```objective-c
 //-- 先创建按钮信息 ------------------------------------------------------------------
 // 小数组第一个为图片名、第二个为按钮名
-NSArray *allItems = @[@[@"drawer_msg", @"按钮1"],
-                      @[@"drawer_msg", @"按钮2"],
-                      @[@"drawer_msg", @"弹视图"],
-                      @[@"drawer_msg", @"按钮4"]];
+NSArray *allItems = @[@[@"drawer_msg", @"button1"],
+                      @[@"drawer_msg", @"button2"],
+                      @[@"drawer_msg", @"button3"],
+                      @[@"drawer_msg", @"button4"]];
                       
 /** 初始化 */
 _drawerView = [[ACNavBarDrawer alloc] initWithView:self.view andItemInfoArray:allItems];
@@ -52,12 +52,14 @@ _drawerView.delegate = self;
 
 // 抽屉上按钮事件的回调
 -(void)didTapButtonAtIndex:(NSInteger)itemIndex
-{    	    
+{    
+    NSLog(@"Button %d is clicked.", (itemIndex + 1));
+
     switch (itemIndex)
     {
         case 0:
         {
-            NSLog(@"Button %d tapped.", (itemIndex + 1));
+            
         }
             break;
             
