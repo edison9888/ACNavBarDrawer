@@ -16,5 +16,8 @@
 /** App 常量 */
 #import "AppConstants.h"
 
+/** 兼容6/7版本的修正位置导航栏按钮 */
+#import "UINavigationItem+FixedSpaceButton.h"
+
 
 #endif

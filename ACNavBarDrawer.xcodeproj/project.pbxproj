@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5015F87317A758CD0033613C /* TestNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5015F87117A758CD0033613C /* TestNextViewController.m */; };
+		5052A62818DC167C000A88F1 /* ACRotateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5052A62518DC167C000A88F1 /* ACRotateButton.m */; };
+		5052A62918DC167C000A88F1 /* nav_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5052A62618DC167C000A88F1 /* nav_plus.png */; };
+		5052A62A18DC167C000A88F1 /* nav_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5052A62718DC167C000A88F1 /* nav_plus@2x.png */; };
+		5052A62F18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5052A62E18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.m */; };
 		50A26A6E18DAD98000C8CEE0 /* ACNavBarDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A26A6D18DAD98000C8CEE0 /* ACNavBarDrawer.m */; };
 		50A26A7418DAD98700C8CEE0 /* drawer_msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A26A7018DAD98700C8CEE0 /* drawer_msg.png */; };
 		50A26A7518DAD98700C8CEE0 /* drawer_msg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A26A7118DAD98700C8CEE0 /* drawer_msg@2x.png */; };
-		50A26A7618DAD98700C8CEE0 /* nav_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A26A7218DAD98700C8CEE0 /* nav_plus.png */; };
-		50A26A7718DAD98700C8CEE0 /* nav_plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A26A7318DAD98700C8CEE0 /* nav_plus@2x.png */; };
 		50BFC3D617A63FB7002371F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BFC3D517A63FB7002371F9 /* UIKit.framework */; };
 		50BFC3D817A63FB7002371F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BFC3D717A63FB7002371F9 /* Foundation.framework */; };
 		50BFC3DA17A63FB7002371F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BFC3D917A63FB7002371F9 /* CoreGraphics.framework */; };
@@ -29,13 +31,17 @@
 /* Begin PBXFileReference section */
 		5015F87017A758CD0033613C /* TestNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNextViewController.h; sourceTree = "<group>"; };
 		5015F87117A758CD0033613C /* TestNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNextViewController.m; sourceTree = "<group>"; };
+		5052A62218DC142A000A88F1 /* ACRotateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACRotateButton.h; sourceTree = "<group>"; };
+		5052A62518DC167C000A88F1 /* ACRotateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACRotateButton.m; sourceTree = "<group>"; };
+		5052A62618DC167C000A88F1 /* nav_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_plus.png; sourceTree = "<group>"; };
+		5052A62718DC167C000A88F1 /* nav_plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_plus@2x.png"; sourceTree = "<group>"; };
+		5052A62D18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+FixedSpaceButton.h"; sourceTree = "<group>"; };
+		5052A62E18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+FixedSpaceButton.m"; sourceTree = "<group>"; };
 		50A26A6918DAD97A00C8CEE0 /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
 		50A26A6C18DAD98000C8CEE0 /* ACNavBarDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACNavBarDrawer.h; sourceTree = "<group>"; };
 		50A26A6D18DAD98000C8CEE0 /* ACNavBarDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNavBarDrawer.m; sourceTree = "<group>"; };
 		50A26A7018DAD98700C8CEE0 /* drawer_msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer_msg.png; sourceTree = "<group>"; };
 		50A26A7118DAD98700C8CEE0 /* drawer_msg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drawer_msg@2x.png"; sourceTree = "<group>"; };
-		50A26A7218DAD98700C8CEE0 /* nav_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_plus.png; sourceTree = "<group>"; };
-		50A26A7318DAD98700C8CEE0 /* nav_plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_plus@2x.png"; sourceTree = "<group>"; };
 		50BFC3D217A63FB7002371F9 /* ACNavBarDrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNavBarDrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BFC3D517A63FB7002371F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50BFC3D717A63FB7002371F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +77,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5052A62118DC141B000A88F1 /* ACRotateButton */ = {
+			isa = PBXGroup;
+			children = (
+				5052A62218DC142A000A88F1 /* ACRotateButton.h */,
+				5052A62518DC167C000A88F1 /* ACRotateButton.m */,
+				5052A62618DC167C000A88F1 /* nav_plus.png */,
+				5052A62718DC167C000A88F1 /* nav_plus@2x.png */,
+			);
+			path = ACRotateButton;
+			sourceTree = "<group>";
+		};
+		5052A62B18DC1CF8000A88F1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5052A62C18DC1CF8000A88F1 /* UI */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5052A62C18DC1CF8000A88F1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5052A62D18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.h */,
+				5052A62E18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		50A26A6818DAD97A00C8CEE0 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				50A26A6B18DAD98000C8CEE0 /* ACNavBarDrawer */,
+				5052A62118DC141B000A88F1 /* ACRotateButton */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -101,8 +136,6 @@
 			children = (
 				50A26A7018DAD98700C8CEE0 /* drawer_msg.png */,
 				50A26A7118DAD98700C8CEE0 /* drawer_msg@2x.png */,
-				50A26A7218DAD98700C8CEE0 /* nav_plus.png */,
-				50A26A7318DAD98700C8CEE0 /* nav_plus@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -139,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				50A26A6818DAD97A00C8CEE0 /* Macros */,
+				5052A62B18DC1CF8000A88F1 /* Categories */,
 				50BFC40717A642A5002371F9 /* Constants */,
 				50BFC3E417A63FB7002371F9 /* AppDelegate.h */,
 				50BFC3E517A63FB7002371F9 /* AppDelegate.m */,
@@ -238,8 +272,8 @@
 				50BFC3E017A63FB7002371F9 /* InfoPlist.strings in Resources */,
 				50A26A7518DAD98700C8CEE0 /* drawer_msg@2x.png in Resources */,
 				50BFC3E817A63FB7002371F9 /* Default.png in Resources */,
-				50A26A7618DAD98700C8CEE0 /* nav_plus.png in Resources */,
-				50A26A7718DAD98700C8CEE0 /* nav_plus@2x.png in Resources */,
+				5052A62918DC167C000A88F1 /* nav_plus.png in Resources */,
+				5052A62A18DC167C000A88F1 /* nav_plus@2x.png in Resources */,
 				50A26A7418DAD98700C8CEE0 /* drawer_msg.png in Resources */,
 				50BFC3EA17A63FB7002371F9 /* Default@2x.png in Resources */,
 				50BFC3EC17A63FB7002371F9 /* Default-568h@2x.png in Resources */,
@@ -257,6 +291,8 @@
 				50BFC3E617A63FB7002371F9 /* AppDelegate.m in Sources */,
 				50BFC41B17A6433F002371F9 /* SampleViewController.m in Sources */,
 				5015F87317A758CD0033613C /* TestNextViewController.m in Sources */,
+				5052A62F18DC1D4E000A88F1 /* UINavigationItem+FixedSpaceButton.m in Sources */,
+				5052A62818DC167C000A88F1 /* ACRotateButton.m in Sources */,
 				50A26A6E18DAD98000C8CEE0 /* ACNavBarDrawer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
